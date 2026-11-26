@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --border: #475569;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 3rem;
+}
+
+.header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.status-banner {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--danger);
+    color: white;
+}
+
+.kandidat-section {
+    margin-bottom: 3rem;
+}
+
+.kandidat-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 0.75rem;
+}
+
+.kandidat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-kandidat {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-kandidat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+}
+
+.badge-nomor {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.foto-calon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent);
+}
+
+.card-kandidat h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.kelas {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.visi-misi {
+    background-color: var(--bg-card);
+    padding: 0.85rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.visi-misi h4 {
+    color: var(--accent);
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.visi-misi h4:first-child {
+    margin-top: 0;
+}
+
+.visi-misi ul {
+    padding-left: 1rem;
+    color: var(--text-secondary);
+}
+
+.btn-pilih {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-pilih:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-pilih:disabled {
+    background-color: var(--border);
+    cursor: not-allowed;
+    color: var(--text-secondary);
+}
+
+.hasil-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hasil-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.hasil-header h2 {
+    font-size: 1.3rem;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.chart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.chart-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: var(--bg-card);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--accent);
+    width: 0%;
+    transition: width 0.4s ease-in-out;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.table-container th {
+    border-bottom: 2px solid var(--border);
+    color: var(--text-secondary);
+    padding: 0.75rem;
+}
+
+.table-container td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem;
+}
+
+.edukasi-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.edukasi-section h3 {
+    margin-bottom: 0.75rem;
+    color: #f59e0b;
+}
+
+.edukasi-section p {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.edukasi-section ul {
+    padding-left: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.edukasi-section li {
+    margin-bottom: 0.3rem;
+}
+
+code {
+    background-color: var(--bg-card);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #38bdf8;
+}
+
+footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}

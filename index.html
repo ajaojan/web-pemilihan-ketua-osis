@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Pemilihan Ketua OSIS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Utama -->
+    <header class="header">
+        <h1>Pemilihan Ketua OSIS 2026/2027</h1>
+        <p>Gunakan hak suaramu secara bijak. Satu perangkat hanya dapat memilih satu kali.</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Status Pemilihan -->
+        <section id="status-box" class="status-banner">
+            <p id="status-text">Status: <strong>Belum Memilih</strong></p>
+            <button id="btn-reset" class="btn-secondary">Reset Simulasi</button>
+        </section>
+
+        <!-- Daftar Kandidat -->
+        <section class="kandidat-section">
+            <h2>Daftar Pasangan Calon</h2>
+            <div class="kandidat-grid">
+                
+                <!-- Kandidat 1 -->
+                <article class="card-kandidat" data-id="1">
+                    <div class="badge-nomor">01</div>
+                    <img src="https://via.placeholder.com/150" alt="Foto Calon 1" class="foto-calon">
+                    <h3>Raka Pratama & Sinta Dewi</h3>
+                    <p class="kelas">XI RPL 1 & XI TKJ 2</p>
+                    
+                    <div class="visi-misi">
+                        <h4>Visi</h4>
+                        <p>Mewujudkan OSIS yang kreatif, inovatif, dan berkarakter unggul di era digital.</p>
+                        <h4>Misi</h4>
+                        <ul>
+                            <li>Mengoptimalkan ekstrakurikuler berbasis teknologi dan seni.</li>
+                            <li>Membangun ruang aspirasi siswa yang terbuka dan cepat tanggap.</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn-pilih" onclick="pilihKandidat(1)">Pilih Paslon 01</button>
+                </article>
+
+                <!-- Kandidat 2 -->
+                <article class="card-kandidat" data-id="2">
+                    <div class="badge-nomor">02</div>
+                    <img src="https://via.placeholder.com/150" alt="Foto Calon 2" class="foto-calon">
+                    <h3>Dimas Saputra & Nadya Putri</h3>
+                    <p class="kelas">XI MM 1 & XI AKL 1</p>
+                    
+                    <div class="visi-misi">
+                        <h4>Visi</h4>
+                        <p>Menjadikan sekolah sebagai lingkungan yang inklusif, disiplin, dan berprestasi.</p>
+                        <h4>Misi</h4>
+                        <ul>
+                            <li>Mengadakan kompetisi minat bakat antarkelas secara rutin.</li>
+                            <li>Meningkatkan kepedulian sosial dan kebersihan lingkungan sekolah.</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn-pilih" onclick="pilihKandidat(2)">Pilih Paslon 02</button>
+                </article>
+
+                <!-- Kandidat 3 -->
+                <article class="card-kandidat" data-id="3">
+                    <div class="badge-nomor">03</div>
+                    <img src="https://via.placeholder.com/150" alt="Foto Calon 3" class="foto-calon">
+                    <h3>Fajar Nugroho & Alya Rahma</h3>
+                    <p class="kelas">XI RPL 2 & XI OTKP 1</p>
+                    
+                    <div class="visi-misi">
+                        <h4>Visi</h4>
+                        <p>OSIS progresif yang siap mendukung potensi akademik maupun non-akademik siswa.</p>
+                        <h4>Misi</h4>
+                        <ul>
+                            <li>Digitalisasi mading sekolah dan sistem informasi kegiatan OSIS.</li>
+                            <li>Mempererat kolaborasi antar-organisasi siswa di sekolah.</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn-pilih" onclick="pilihKandidat(3)">Pilih Paslon 03</button>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Hasil & Hitung Suara -->
+        <section class="hasil-section">
+            <div class="hasil-header">
+                <h2>Hasil Perhitungan Suara Sementara</h2>
+                <p>Total Suara Masuk: <strong id="total-suara">0</strong></p>
+            </div>
+
+            <!-- Bar Diagram Persentase -->
+            <div class="chart-container">
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>01. Raka & Sinta</span>
+                        <span id="teks-persen-1">0% (0 suara)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="bar-1" class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>02. Dimas & Nadya</span>
+                        <span id="teks-persen-2">0% (0 suara)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="bar-2" class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-label">
+                        <span>03. Fajar & Alya</span>
+                        <span id="teks-persen-3">0% (0 suara)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="bar-3" class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel Rekapitulasi Hitung Suara -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No. Paslon</th>
+                            <th>Nama Kandidat</th>
+                            <th>Perolehan Suara</th>
+                            <th>Persentase</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabel-rekap-body">
+                        <tr>
+                            <td>01</td>
+                            <td>Raka & Sinta</td>
+                            <td id="tabel-suara-1">0</td>
+                            <td id="tabel-persen-1">0%</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Dimas & Nadya</td>
+                            <td id="tabel-suara-2">0</td>
+                            <td id="tabel-persen-2">0%</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Fajar & Alya</td>
+                            <td id="tabel-suara-3">0</td>
+                            <td id="tabel-persen-3">0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tantangan Pengembangan: Penjelasan Keamanan LocalStorage -->
+        <section class="edukasi-section">
+            <h3>⚠️ Catatan Keamanan Sistem (Tantangan Pengembangan)</h3>
+            <p>Aplikasi ini menggunakan <code>localStorage</code> hanya untuk <strong>kebutuhan simulasi</strong>. Pada pemilihan resmi, penggunaan <code>localStorage</code> sangat tidak aman karena:</p>
+            <ul>
+                <li><strong>Mudah Dimanipulasi:</strong> Pengguna dapat membuka <em>Inspect Element / DevTools</em> di browser dan mengubah angka suara atau menghapus status "sudah memilih" secara manual.</li>
+                <li><strong>Penyimpanan Lokal (Client-Side):</strong> Data hanya tersimpan di satu browser/perangkat saja, tidak terpusat di server/database sehingga tidak bisa merekap suara dari banyak pemilih secara nyata.</li>
+                <li><strong>Tidak Ada Autentikasi:</strong> Tidak ada verifikasi identitas pemilih (seperti NISN/token unik), sehingga satu orang bisa melakukan vote berulang kali dengan mode <em>Incognito</em> atau ganti browser.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Simulasi Pemilihan Ketua OSIS &copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
